@@ -40,16 +40,19 @@ function draw() {
       spacecraft_sprite.changeImage("Going up", spacecraft_Gas_Img);
       spacecraft_sprite.y -= 1;
     }
-    if (keyDown(DOWN_ARROW)) {
+    else if (keyDown(DOWN_ARROW)) {
       spacecraft_sprite.changeImage("Going down", spacecraft_Gas_Img);
     }
-    if (keyDown(RIGHT_ARROW)) {
+    else if (keyDown(RIGHT_ARROW)) {
       spacecraft_sprite.changeImage("Going right", spacecraft_LeftGas_Img);
       xPos += 1;
     }
-    if (keyDown(LEFT_ARROW)) {
+    else if (keyDown(LEFT_ARROW)) {
       spacecraft_sprite.changeImage("Going left", spacecraft_RightGas_Img);
       xPos -= 1;
+    }
+    else {
+      spacecraft_sprite.changeImage("spacecraft", spacecraft_NoGas_Img);
     }
     if (ISS_sprite.x - 80 === spacecraft_sprite.x && ISS_sprite.y + 130 === spacecraft_sprite.y) {
       console.log("HURRAY!");
